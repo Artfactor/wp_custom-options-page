@@ -143,10 +143,10 @@ function getOptionsStartWith($start, $limit = false){
 
 
 function getOption($name){
-	$options = getOptionsStartWith('options_field_'.$name, 1);
+	$options = get_option('options_field_'.$name);
 	if($options){
 		try{
-			$option = json_decode($option->option_value);
+			$option = json_decode($options);
 			return $option->value;
 		}
 		catch(Exception $e){
